@@ -23,6 +23,6 @@ jobs:
           github_auth: ${{ secrets.TOKEN_CODESPACE }}
         uses: ./
         with:
-          REPO_ID: 897314120
-          CODESPACE_NAME: "fictional-parakeet-wvpw6rp5grg3g57j"
+          REPO_ID: 12345
+          CODESPACE_NAME: "your-codespace-name"
           WAIT_SECONDS: 30
