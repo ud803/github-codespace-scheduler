@@ -12,7 +12,7 @@ Hello guys, I'm trying to use codespace as a remote server and needed to turn on
 - `WAIT_SECONDS`: seconds to wait before stopping the codespace. I think it should be long enough to start the codespace + do your work in codespace. Calculate it so that your monthly usage minutes does not exceed the free tier.
 
 ```
-name: Test My Custom Action
+name: Codespace Scheduler
 
 on:
   schedule:
