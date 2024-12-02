@@ -1,53 +1,46 @@
 const core = require('@actions/core');
-const { Octokit } = require('@octokit/core'); // Octokit 가져오기
-
-// Octokit.js
-// https://github.com/octokit/core.js#readme
-
-
+const { Octokit } = require('@octokit/core'); // Fetch Octokit
 
 async function run() {
 try {
-    // 입력 값 가져오기
-    const name = core.getInput('name');
-    const repo_id = +core.getInput('repo_id');
+    // Fetch Envs 
+    const GITHUB_AUTH = process.env.github_auth
+
+    // Fetch Variables
+    const REPO_ID = +core.getInput('repo_id');
     const CODESPACE_NAME = core.getInput('CODESPACE_NAME');
-    const github_auth = process.env.github_auth
-    const PR_NUMBER = process.env.PR_NUMBER
-    // 로그 출력
-    console.log(`Hello, ${name}!`);
-    console.log(`Hello my repo_id, ${repo_id}!`);
-    console.log(`POST /user/codespaces/${CODESPACE_NAME}/start`);
+    const WAIT_SECONDS = core.getInput('WAIT_SECONDS');
+
+    console.log(`Hello my repo_id is: , ${REPO_ID}!`);
 
     const octokit = new Octokit({
-        auth: github_auth
+        auth: GITHUB_AUTH
       })
 
-    // GitHub API 요청 (octokit 사용)
+    // 1. Start Codespace
     const response_start = await octokit.request(`POST /user/codespaces/${CODESPACE_NAME}/start`, {
         codespace_name: CODESPACE_NAME,
         headers: {
           'X-GitHub-Api-Version': '2022-11-28'
         }
       });
-      // API 응답 출력 (선택적)
       console.log(response_start);
       
-      await new Promise(r => setTimeout(r, 20 * 1000));
-      console.log('Sleep 20 secs');
+      // 2. Wait sometimes until some job is done under codespace.
+      console.log(`Wait for ${WAIT_SECONDS} seconds...`);
+      await new Promise(r => setTimeout(r, WAIT_SECONDS * 1000));
       
+      // 3. Stop Codespace
       const response_stop = await octokit.request(`POST /user/codespaces/${CODESPACE_NAME}/stop`, {
         codespace_name: CODESPACE_NAME,
         headers: {
           'X-GitHub-Api-Version': '2022-11-28'
         }
       });
-      // API 응답 출력 (선택적)
       console.log(response_stop);
 
-
 } catch (error) {
-    // 에러 발생 시 처리
+    // Error Message
     core.setFailed(`Action failed with error: ${error.message}`);
 }
 }

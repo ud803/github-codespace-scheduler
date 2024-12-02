@@ -13,17 +13,15 @@ jobs:
         with:
           repository: ${{ github.repository }}
         
-      - name: Step2) Print current date and custom message
+      - name: Step2) Print current date
         run: |
-          echo "This is a scheduled test!"
+          echo "This is a scheduled event!"
           echo "Current Date and Time: $(date)"
         
-      - name: Step3) Start Codespace
+      - name: Step3) Start & Wait & Stop Codespace
         env:
           github_auth: ${{ secrets.TOKEN_CODESPACE }}
-          PR_NUMBER: ${{ github.event.number }}
         uses: ./
         with:
-          name: "GGG"
           repo_id: 897314120
           CODESPACE_NAME: "fictional-parakeet-wvpw6rp5grg3g57j"
