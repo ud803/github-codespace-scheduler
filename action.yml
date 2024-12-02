@@ -1,4 +1,4 @@
-name: "My Custom Action"
+name: "Codespace Scheduler"
 description: "A custom GitHub Action example"
 inputs:
   REPO_ID:
