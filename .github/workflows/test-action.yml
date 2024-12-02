@@ -2,7 +2,7 @@ name: Test My Custom Action
 # 스케줄 방식
 on:
   schedule:
-    - cron: '* * * * *' # 매분 실행
+    - cron: '*/5 * * * *' # 매분 실행
 jobs:
   echo-test:
     runs-on: ubuntu-latest
