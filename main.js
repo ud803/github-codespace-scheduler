@@ -4,7 +4,7 @@ const { Octokit } = require('@octokit/core'); // Fetch Octokit
 async function run() {
 try {
     // Fetch Envs 
-    const GITHUB_AUTH = process.env.github_auth
+    const GITHUB_AUTH = process.env.GITHUB_AUTH
 
     // Fetch Variables
     const REPO_ID = +core.getInput('repo_id');

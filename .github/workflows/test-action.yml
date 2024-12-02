@@ -20,7 +20,7 @@ jobs:
         
       - name: Step3) Start & Wait & Stop Codespace
         env:
-          github_auth: ${{ secrets.TOKEN_CODESPACE }}
+          GITHUB_AUTH: ${{ secrets.TOKEN_CODESPACE }}
         uses: ./
         with:
           REPO_ID: 12345

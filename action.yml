@@ -4,6 +4,9 @@ icon: "clock"
 color: "green"
 
 inputs:
+  GITHUB_AUTH:
+    description: "Github auth with permission to codespace"
+    required: true
   REPO_ID:
     description: "Integer ID of the repo to make codespace. try following command in your repo: gh api repos/{owner}/{repo} --jq \".id\" "
     required: true
