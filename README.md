@@ -37,7 +37,7 @@ jobs:
           github_auth: ${{ secrets.TOKEN_CODESPACE }}
         uses: ./
         with:
-          REPO_ID: 897314120
+          REPO_ID: {your_repo_integer_id}
           CODESPACE_NAME: "your-codespace-name"
           WAIT_SECONDS: 30
 ```
