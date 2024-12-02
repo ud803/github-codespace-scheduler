@@ -19,13 +19,7 @@ jobs:
           echo "Current Date and Time: $(date)"
         
       - name: Step3) Run custom action
-        run: |
-          gh api --method POST -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" -F "repository_id=R_kgDONXvtSA" -f "ref=main"
-        
-      - name: Step3) Run custom action
         uses: ./
         with:
           name: "GGG"
           name2: "GGG2"
-          
-      
