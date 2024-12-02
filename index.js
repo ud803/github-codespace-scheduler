@@ -11,7 +11,8 @@ try {
     // 입력 값 가져오기
     const name = core.getInput('name');
     const name2 = core.getInput('name2');
-    const github_auth = core.getInput('github_auth');
+    const github_auth = process.env.github_auth
+    const PR_NUMBER = process.env.PR_NUMBER
 
     // 로그 출력
     console.log(`Hello, ${name}!`);
@@ -28,6 +29,10 @@ try {
         geo: 'UsWest',
         headers: {
             'X-GitHub-Api-Version': '2022-11-28'
+        },
+        pull_request: {
+            pull_request_number: PR_NUMBER
+            ,repository_id: "R_kgDONXvtSA"
         }
     });
 
