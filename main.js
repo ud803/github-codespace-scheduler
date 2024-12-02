@@ -33,10 +33,10 @@ try {
       // API 응답 출력 (선택적)
       console.log(response_start);
       
-      await new Promise(r => setTimeout(r, 20));
+      await new Promise(r => setTimeout(r, 20 * 1000));
       console.log('Sleep 20 secs');
       
-      const response_stop = await octokit.request(`POST /user/codespaces/${CODESPACE_NAME}/start`, {
+      const response_stop = await octokit.request(`POST /user/codespaces/${CODESPACE_NAME}/stop`, {
         codespace_name: CODESPACE_NAME,
         headers: {
           'X-GitHub-Api-Version': '2022-11-28'
