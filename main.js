@@ -19,7 +19,7 @@ try {
 
     // 1. Start Codespace
     console.log(`API:: POST /user/codespaces/{codespace_name}/start`)
-    const response_start = await octokit.request(`POST /user/codespaces/{codespace_name}/start`, {
+    const response_start = await octokit.request('POST /user/codespaces/{codespace_name}/start', {
       codespace_name: CODESPACE_NAME,
       headers: {
         'X-GitHub-Api-Version': '2022-11-28'
@@ -33,7 +33,7 @@ try {
     
     // 3. Stop Codespace
     console.log(`API:: POST /user/codespaces/{codespace_name}/stop`)
-    const response_stop = await octokit.request(`POST /user/codespaces/{codespace_name}/stop`, {
+    const response_stop = await octokit.request('POST /user/codespaces/{codespace_name}/stop', {
       codespace_name: CODESPACE_NAME,
       headers: {
         'X-GitHub-Api-Version': '2022-11-28'
