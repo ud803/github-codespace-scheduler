@@ -20,8 +20,9 @@ jobs:
           
       - name: Codespace Scheduler
         uses: ud803/github-codespace-scheduler@v1.0.5
+        env:
+          GITHUB_AUTH: ${{ secrets.TOKEN_CODESPACE }}
         with:
           REPO_ID: 897314120
           CODESPACE_NAME: "fictional-parakeet-wvpw6rp5grg3g57j"
           WAIT_SECONDS: 30
-          GITHUB_AUTH: ${{ secrets.TOKEN_CODESPACE }}
