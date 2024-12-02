@@ -1,7 +1,7 @@
 name: "Codespace Scheduler"
 description: "Codespace On/Off Scheduler"
-color: "Green"
-Icon: "clock"
+icon: "clock"
+color: "green"
 
 inputs:
   REPO_ID:
