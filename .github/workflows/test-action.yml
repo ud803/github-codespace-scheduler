@@ -1,28 +1,28 @@
-name: Test My Custom Action
-# 스케줄 방식
-on:
-  schedule:
-    - cron: '*/5 * * * *' # 매분 
-  workflow_dispatch:
-jobs:
-  echo-test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Step1) Checkout code
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ github.repository }}
+# name: Test My Custom Action
+# # 스케줄 방식
+# on:
+#   schedule:
+#     - cron: '*/5 * * * *' # 매분 
+#   workflow_dispatch:
+# jobs:
+#   echo-test:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Step1) Checkout code
+#         uses: actions/checkout@v4
+#         with:
+#           repository: ${{ github.repository }}
         
-      - name: Step2) Print current date
-        run: |
-          echo "This is a scheduled event!"
-          echo "Current Date and Time: $(date)"
+#       - name: Step2) Print current date
+#         run: |
+#           echo "This is a scheduled event!"
+#           echo "Current Date and Time: $(date)"
         
-      - name: Step3) Start & Wait & Stop Codespace
-        env:
-          GITHUB_AUTH: ${{ secrets.TOKEN_CODESPACE }}
-        uses: ./
-        with:
-          REPO_ID: 897314120
-          CODESPACE_NAME: "fictional-parakeet-wvpw6rp5grg3g57j"
-          WAIT_SECONDS: 30
+#       - name: Step3) Start & Wait & Stop Codespace
+#         env:
+#           GITHUB_AUTH: ${{ secrets.TOKEN_CODESPACE }}
+#         uses: ./
+#         with:
+#           REPO_ID: 897314120
+#           CODESPACE_NAME: "fictional-parakeet-wvpw6rp5grg3g57j"
+#           WAIT_SECONDS: 30
