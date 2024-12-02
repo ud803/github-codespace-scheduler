@@ -17,6 +17,7 @@ try {
     // 로그 출력
     console.log(`Hello, ${name}!`);
     console.log(`Hello my repo_id, ${repo_id}!`);
+    console.log('POST /user/codespaces/${CODESPACE_NAME}/start');
 
     const octokit = new Octokit({
         auth: github_auth
