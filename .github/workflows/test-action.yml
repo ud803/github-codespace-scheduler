@@ -19,6 +19,9 @@ jobs:
           echo "Current Date and Time: $(date)"
         
       - name: Step3) Run custom action
+        env:
+          github_auth: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
         uses: ./
         with:
           name: "GGG"
