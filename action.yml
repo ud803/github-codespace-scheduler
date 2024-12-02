@@ -1,5 +1,8 @@
 name: "Codespace Scheduler"
-description: "A custom GitHub Action example"
+description: "Codespace On/Off Scheduler"
+color: "Green"
+Icon: "clock"
+
 inputs:
   REPO_ID:
     description: "Integer ID of the repo to make codespace. try following command in your repo: gh api repos/{owner}/{repo} --jq \".id\" "
