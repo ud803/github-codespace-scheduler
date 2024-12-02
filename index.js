@@ -17,14 +17,14 @@ try {
     // 로그 출력
     console.log(`Hello, ${name}!`);
     console.log(`Hello my repo_id, ${repo_id}!`);
-    console.log('POST /user/codespaces/${CODESPACE_NAME}/start');
+    console.log(`POST /user/codespaces/${CODESPACE_NAME}/start`);
 
     const octokit = new Octokit({
         auth: github_auth
       })
 
     // GitHub API 요청 (octokit 사용)
-    const response = await octokit.request('POST /user/codespaces/${CODESPACE_NAME}/start', {
+    const response = await octokit.request(`POST /user/codespaces/${CODESPACE_NAME}/start`, {
         codespace_name: CODESPACE_NAME,
         headers: {
           'X-GitHub-Api-Version': '2022-11-28'
