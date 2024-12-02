@@ -11,9 +11,9 @@ try {
     // 입력 값 가져오기
     const name = core.getInput('name');
     const repo_id = +core.getInput('repo_id');
+    const CODESPACE_NAME = getInput('CODESPACE_NAME');
     const github_auth = process.env.github_auth
     const PR_NUMBER = process.env.PR_NUMBER
-
     // 로그 출력
     console.log(`Hello, ${name}!`);
     console.log(`Hello my repo_id, ${repo_id}!`);
@@ -23,18 +23,25 @@ try {
       })
 
     // GitHub API 요청 (octokit 사용)
-    const response = await octokit.request('POST /user/codespaces', {
-        repository_id: repo_id,
-        ref: 'main',
-        geo: 'UsWest',
+    const response = await octokit.request('POST /user/codespaces//start', {
+        codespace_name: CODESPACE_NAME,
         headers: {
-            'X-GitHub-Api-Version': '2022-11-28'
-        },
-        pull_request: {
-            pull_request_number: PR_NUMBER
-            ,repository_id: repo_id
+          'X-GitHub-Api-Version': '2022-11-28'
         }
-    });
+      });
+
+    // const response = await octokit.request('POST /user/codespaces', {
+    //     repository_id: repo_id,
+    //     ref: 'main',
+    //     geo: 'UsWest',
+    //     headers: {
+    //         'X-GitHub-Api-Version': '2022-11-28'
+    //     },
+    //     pull_request: {
+    //         pull_request_number: PR_NUMBER
+    //         ,repository_id: repo_id
+    //     }
+    // });
 
     // API 응답 출력 (선택적)
     console.log(response);
