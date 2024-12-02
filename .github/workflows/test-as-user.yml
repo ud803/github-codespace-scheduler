@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Codespace Scheduler
-        uses: ud803/github-codespace-scheduler@v1.0.4
+        uses: ud803/github-codespace-scheduler@v1.0.5
         with:
           REPO_ID: 897314120
           CODESPACE_NAME: "fictional-parakeet-wvpw6rp5grg3g57j"
