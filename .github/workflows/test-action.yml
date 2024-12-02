@@ -8,6 +8,9 @@ jobs:
   echo-test:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout code
+        uses: actions/checkout@3
+        
       - name: Run custom action
         uses: ./
         with:
