@@ -8,18 +8,8 @@ jobs:
   codespace_scheduler:
     runs-on: ubuntu-latest
     steps:
-      - name: Step1) Checkout code
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ github.repository }}
-        
-      - name: Step2) Print current date
-        run: |
-          echo "This is a scheduled event!"
-          echo "Current Date and Time: $(date)"
-          
       - name: Codespace Scheduler
-        uses: ud803/github-codespace-scheduler@v1.0.2
+        uses: ud803/github-codespace-scheduler@v1.0.3
         with:
           REPO_ID: 897314120
           CODESPACE_NAME: "fictional-parakeet-wvpw6rp5grg3g57j"
