@@ -5,6 +5,10 @@ Hello guys, I'm trying to use codespace as a remote server and needed to turn on
 2. You have already set a cronjob or a scheduled job in the codespace
 3. Through this action, you only turn on/off at the right timing to make above job work on time.
 
+# Prerequisites
+- You should have github tokens with permissions for codespace.
+- You should have a codespace already created. (because it just turns on & off existing one)
+
 # Parameters
 - cron: make this 1~2 minutes earlier before your "real cron job" in codespace starts
 - `REPO_ID`: integer id of your repo for codespace. try `gh api repos/{owner}/{repo} --jq ".id"` in your terminal to figure it out
