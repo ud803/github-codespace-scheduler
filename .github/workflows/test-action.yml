@@ -7,6 +7,10 @@ jobs:
   echo-test:
     runs-on: ubuntu-latest
     steps:
+      - name: Run custom action
+        uses: ./
+        with:
+          name: "GGG"
       - name: Print current date and custom message
         run: |
           echo "This is a scheduled test!"
