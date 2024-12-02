@@ -1,8 +1,8 @@
 name: Test My Custom Action
 # 스케줄 방식
 on:
-  schedule:
-    - cron: '*/5 * * * *' # 매분 
+  # schedule:
+  #   - cron: '*/5 * * * *' # 매분 
   workflow_dispatch:
 jobs:
   echo-test:
