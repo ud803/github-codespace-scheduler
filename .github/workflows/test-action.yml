@@ -25,4 +25,4 @@ jobs:
         uses: ./
         with:
           name: "GGG"
-          name2: "GGG2"
+          repo_id: 897314120
