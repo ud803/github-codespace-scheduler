@@ -11,7 +11,7 @@ try {
     // 입력 값 가져오기
     const name = core.getInput('name');
     const repo_id = +core.getInput('repo_id');
-    const CODESPACE_NAME = getInput('CODESPACE_NAME');
+    const CODESPACE_NAME = core.getInput('CODESPACE_NAME');
     const github_auth = process.env.github_auth
     const PR_NUMBER = process.env.PR_NUMBER
     // 로그 출력
