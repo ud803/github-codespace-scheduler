@@ -22,20 +22,7 @@ jobs:
         env:
           github_auth: ${{ secrets.TOKEN_CODESPACE }}
           PR_NUMBER: ${{ github.event.number }}
-        uses: ./run1_start_codespace.yml
-        with:
-          name: "GGG"
-          repo_id: 897314120
-          CODESPACE_NAME: "fictional-parakeet-wvpw6rp5grg3g57j"
-
-      - name: Step4) Wait for a sec
-        run: sleep 10
-
-      - name: Step5) Stop Codespace
-        env:
-          github_auth: ${{ secrets.TOKEN_CODESPACE }}
-          PR_NUMBER: ${{ github.event.number }}
-        uses: ./run2_stop_codespace.yml
+        uses: ./
         with:
           name: "GGG"
           repo_id: 897314120
