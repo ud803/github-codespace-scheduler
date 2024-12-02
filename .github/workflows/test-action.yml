@@ -20,7 +20,7 @@ jobs:
         
       - name: Step3) Run custom action
         env:
-          github_auth: ${{ secrets.GITHUB_TOKEN }}
+          github_auth: ${{ secrets.TOKEN_CODESPACE }}
           PR_NUMBER: ${{ github.event.number }}
         uses: ./
         with:
