@@ -23,3 +23,4 @@ jobs:
         with:
           name: "GGG"
           name2: "GGG2"
+          github_auth: ${{ secrets.GITHUB_TOKEN }}
