@@ -7,11 +7,8 @@ try {
     const GITHUB_AUTH = process.env.GITHUB_AUTH
 
     // Fetch Variables
-    const REPO_ID = +core.getInput('repo_id');
     const CODESPACE_NAME = core.getInput('CODESPACE_NAME');
     const WAIT_SECONDS = core.getInput('WAIT_SECONDS');
-
-    console.log(`Hello my repo_id is: ${REPO_ID}!`);
 
     const octokit = new Octokit({
         auth: GITHUB_AUTH
