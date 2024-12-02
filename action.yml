@@ -7,4 +7,4 @@ inputs:
     default: "World"
 runs:
   using: "node16"
-  main: "run1_start_codespace.js"
+  main: "main.js"
