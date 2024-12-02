@@ -23,23 +23,11 @@ on:
     - cron: '*/5 * * * *' 
   workflow_dispatch:
 jobs:
-  echo-test:
+  codespace_scheduler:
     runs-on: ubuntu-latest
     steps:
-      - name: Step1) Checkout code
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ github.repository }}
-        
-      - name: Step2) Print current date
-        run: |
-          echo "This is a scheduled event!"
-          echo "Current Date and Time: $(date)"
-        
-      - name: Step3) Start & Wait & Stop Codespace
-        env:
-          github_auth: ${{ secrets.TOKEN_CODESPACE }}
-        uses: ./
+      - name: Codespace Scheduler
+        uses: ud803/github-codespace-scheduler@v1.0.0
         with:
           REPO_ID: {your_repo_integer_id}
           CODESPACE_NAME: "your-codespace-name"
