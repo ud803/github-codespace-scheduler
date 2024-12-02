@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Codespace Scheduler
-        uses: ud803/github-codespace-scheduler@v1.0.5
+        uses: ud803/github-codespace-scheduler@v1.0.6
         env:
           GITHUB_AUTH: ${{ secrets.YOUR_TOKEN_NAME_WITH_PERMISSION_TO_CODESPACE }}
         with:
