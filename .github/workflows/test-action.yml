@@ -20,9 +20,10 @@ jobs:
         
       - name: Step3) Run custom action
         env:
-          github_auth: ${{ secrets.GITHUB_TOKEN }}
+          github_auth: ${{ secrets.TOKEN_CODESPACE }}
           PR_NUMBER: ${{ github.event.number }}
         uses: ./
         with:
           name: "GGG"
           repo_id: 897314120
+          CODESPACE_NAME: "musical-potato-r7qj94q64963xwrr"
