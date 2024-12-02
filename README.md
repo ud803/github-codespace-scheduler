@@ -27,9 +27,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Codespace Scheduler
-        uses: ud803/github-codespace-scheduler@v1.0.0
+        uses: ud803/github-codespace-scheduler@v1.0.5
+        env:
+          GITHUB_AUTH: ${{ secrets.YOUR_TOKEN_NAME_WITH_PERMISSION_TO_CODESPACE }}
         with:
-          REPO_ID: {your_repo_integer_id}
           CODESPACE_NAME: "your-codespace-name"
           WAIT_SECONDS: 30
 ```
