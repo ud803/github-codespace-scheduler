@@ -1,5 +1,5 @@
-name: "Codespace Scheduler"
-description: "Codespace On/Off Scheduler"
+name: "Turn On Codespace"
+description: "Codespace On Scheduler"
 icon: "clock"
 color: "green"
 
@@ -7,14 +7,8 @@ inputs:
   GITHUB_AUTH:
     description: "Github auth with permission to codespace"
     required: true
-  REPO_ID:
-    description: "Integer ID of the repo to make codespace. try following command in your repo: gh api repos/{owner}/{repo} --jq \".id\" "
-    required: true
   CODESPACE_NAME:
     description: "name of the codespace to start/stop. The codespace should be created in advance."
-    required: true
-  WAIT_SECONDS:
-    description: "Second to wait before stop operation`"
     required: true
 runs:
   using: "node16"
