@@ -11,7 +11,6 @@ Hello guys, I'm trying to use codespace as a remote server and needed to turn on
 
 # Parameters
 - cron: make this 1~2 minutes earlier before your "real cron job" in codespace starts
-- `REPO_ID`: integer id of your repo for codespace. try `gh api repos/{owner}/{repo} --jq ".id"` in your terminal to figure it out
 - `CODESPACE_NAME`: name of your target codespace. ex) `curious-fox-wr3249sfop3`
 - `WAIT_SECONDS`: seconds to wait before stopping the codespace. I think it should be long enough to start the codespace + do your work in codespace. Calculate it so that your monthly usage minutes does not exceed the free tier.
 
